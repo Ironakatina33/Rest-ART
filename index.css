@@ -1,5 +1,6 @@
 body {
     background-color: rgb(201, 201, 201);
+    height: fit-content;
 }
 
 .background-image {
@@ -19,15 +20,33 @@ body {
 .text{
     color: aliceblue;
     font-family: 'Roboto', sans-serif;
+    font-weight: 400;
     text-align: center; /* Alignement central */
-    margin: 200px auto;
+    margin-top: 75px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.text2{
+    margin-top: 90px;
+}
+
+.text3{
+    margin-top: 30px;
 }
 
 .titlepage{
     font-family: 'Arapey', sans-serif;
     text-align: center;
-    font-size: 100px;
+    font-size: 36px;
     color: rgb(255, 168, 0);
+    margin-top: 200px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.titlepage2{
+    margin: 88px auto 0 auto;
 }
 
 .logo {
@@ -37,10 +56,24 @@ body {
     height: 47px; /* Hauteur spécifiée */
 }
 
+.logo2 {
+    display: block;
+    margin: 222px auto 0 auto; 
+    width: 197px; /* Largeur spécifiée */
+    height: 47px; /* Hauteur spécifiée */
+}
+
+.puzzle1 {
+    display: block;
+    margin: 40px auto 0 auto; 
+    width: 333px; /* Largeur spécifiée */
+    height: 254px; /* Hauteur spécifiée */
+}
+
 .bouton {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     cursor: pointer;
     color: white;
     background-color: transparent;
@@ -51,5 +84,40 @@ body {
     border: 2px solid #FFA800;
     margin-left: 30vw;
     margin-right: 30vw;
-    margin-top: 40vw;
+}
+
+.bouton:active{
+    background-color: #FFA800;
+}
+
+#codeInput {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Styles spécifiques pour les écrans de petite taille (mobiles) */
+@media only screen and (max-width: 600px) {
+    .title {
+        font-size: 60px;
+    }
+
+    #codeInput {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 16px;
+    }
 }
