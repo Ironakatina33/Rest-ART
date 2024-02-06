@@ -1,5 +1,55 @@
-body{
-    background-image: url(images/Image\ fond.png);
-    background-blend-mode: darken;
+body {
+    background-color: rgb(201, 201, 201);
+}
 
-}*
+.background-image {
+    background-image: url(/images/Fond_restart_page.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.title{
+    text-align: center;
+    margin-top: 10vw;
+    font-size: 100px;
+    color: aliceblue;
+}
+
+.text{
+    color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+    text-align: center; /* Alignement central */
+    margin: 200px auto;
+}
+
+.titlepage{
+    font-family: 'Arapey', sans-serif;
+    text-align: center;
+    font-size: 100px;
+    color: rgb(255, 168, 0);
+}
+
+.logo {
+    display: block;
+    margin: 294px auto 0 auto; 
+    width: 197px; /* Largeur spécifiée */
+    height: 47px; /* Hauteur spécifiée */
+}
+
+.bouton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    border: 2px solid #FFA800;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    margin-top: 40vw;
+}
