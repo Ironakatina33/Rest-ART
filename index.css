@@ -17,6 +17,13 @@ body {
     color: aliceblue;
 }
 
+.img-progres {
+    position: absolute;
+    top: 40px; /* Ajustez la valeur pour déplacer l'image vers le bas */
+    left: 45px; /* Ajustez la valeur pour déplacer l'image vers la droite */
+}
+
+
 .text{
     color: aliceblue;
     font-family: 'Roboto', sans-serif;
@@ -147,6 +154,9 @@ body {
     padding: 10px;
     font-size: 18px;
     text-align: center;
+    border: 2px solid #000; 
+    border-radius: 5px; 
+    outline: none; 
 }
 
 button {
@@ -155,8 +165,17 @@ button {
     padding: 10px 20px;
     font-size: 18px;
     cursor: pointer;
+    border: none;
+    background-color: #000; 
+    color: #fff;
+    border-radius: 5px; 
+    border: 2px solid #FFA800;
+    transition: background-color 0.3s ease;
 }
 
+button:hover {
+    background-color: #444;
+}
 
 @media only screen and (max-width: 600px) {
     .title {
@@ -170,4 +189,18 @@ button {
     button {
         font-size: 16px;
     }
+}
+
+.container {
+    position: relative;
+    width: 300px; /* Ajustez la largeur selon vos besoins */
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+}
+
+.img1, .img2, .img3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }

@@ -20,55 +20,80 @@
             height: 100px;
             margin: 10px;
         }
+        .titlepage3{
+    font-family: 'Arapey', sans-serif;
+    text-align: center;
+    font-size: 36px;
+    color: rgb(255, 168, 0);
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+        .parent {
+display: grid;
+color: aliceblue;
+border-color: aliceblue;
+border: 1%;
+grid-template-columns: repeat(3, 33%);
+grid-template-rows: ;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
 
-     
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            color: aliceblue;
-        }
-        th, td {
-            border: 1px solid rgb(255, 255, 255);
-            padding: 15px;
-            text-align: left;
-        }
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 2 / 1 / 3 / 2; }
+.div3 { grid-area: 2 / 2 / 3 / 3; }
+.div4 { grid-area: 3 / 2 / 4 / 3; }
+.div5 { grid-area: 3 / 1 / 4 / 2; }
+.div6 { grid-area: 1 / 2 / 2 / 3; }
+.div7 { grid-area: 1 / 3 / 2 / 4; }
+.div8 { grid-area: 2 / 3 / 3 / 4; }
+.div9 { grid-area: 3 / 3 / 4 / 4; }
+
 
     </style>
 </head>
 <body class="background-image">
 
-<div class="titlepage" style="font-size: 50px;">Epreuve N°1</div>
+<div class="titlepage3" style="font-size: 50px;">Epreuve N°1</div>
 
 <div class="text"> Terminer ce premier puzzle pour découvrir l'emplacement du premier outil. En entrant le code, plongez plus profondément dans le récit captivant du renouveau </div>
 
 
 <table id="myTable">
     <tr>
-        <th>Nom</th>
-        <th>Email</th>
-        <th>Coucou</th>
+
+
+ 
     </tr>
 </table>
 
 <script>
-    var personnes = [
-        {nom: 'Dupont', email: 'dupont@example.com'},
-        {nom: 'Martin', email: 'martin@example.com'},
-        {nom: 'Bernard', email: 'bernard@example.com'}
+    var puzzle = [
+        {colonne1: '<img id="myImage" src="../images/puzzle1/Blanc.png">', colonne2: '<img id="myImage" src="../images/puzzle1/Blanc.png">',colonne3: '<img id="myImage" src="../images/puzzle1/Blanc.png">'},
+        {colonne1: '<img id="myImage" src="../images/puzzle1/Blanc.png">', colonne2: '<img id="myImage" src="../images/puzzle1/Blanc.png">',colonne3: '<img id="myImage" src="../images/puzzle1/Blanc.png">'},
+        {colonne1: '<img id="myImage" src="../images/puzzle1/Blanc.png">', colonne2: '<img id="myImage" src="../images/puzzle1/Blanc.png">',colonne3: '<img id="myImage" src="../images/puzzle1/Blanc.png">'}
     ];
 
-    var table = document.getElementById('myTable');
 
-    for (var i = 0; i < personnes.length; i++) {
-        var row = table.insertRow(i + 1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        cell1.innerHTML = personnes[i].nom;
-        cell2.innerHTML = personnes[i].email;
-    }
 </script>
+<br>
+<br>
 
+<div class="parent">
+    <div class="div1"><img id="myImage" src="../images/puzzle1/Blanc.png" height="100%" width="100%"></div>
+    <div class="div2"> <img id="myImage" src="../images/puzzle1/Blanc.png" height="100%" width="100%"></div>
+    <div class="div3"> <img id="myImage" src="../images/puzzle1/Blanc.png" height="100%" width="100%"></div>
+    <div class="div4"> <img id="myImage" src="../images/puzzle1/Blanc.png" height="100%" width="100%"></div>
+    <div class="div5"> <img id="myImage" src="../images/puzzle1/Blanc.png" height="100%" width="100%"></div>
+    <div class="div6"> <img id="myImage" src="../images/puzzle1/Blanc.png" height="100%" width="100%"></div>
+    <div class="div7"> <img id="myImage" src="../images/puzzle1/Blanc.png" height="100%" width="100%"></div>
+    <div class="div8"> <img id="myImage" src="../images/puzzle1/Blanc.png"height="100%" width="100%"></div>
+    <div class="div9"> <img id="myImage" src="../images/puzzle1/Blanc.png" height="100%" width="100%"></div>
+    </div>
 
+<br>
+<br>
 <div class="gallery">
     <img src="../images/image_puzzle.png" alt="Image 1">
     <img src="../images/image_puzzle.png" alt="Image 2">
@@ -83,6 +108,8 @@
     
     <!-- Ajoutez plus d'images ici -->
 </div>
+<br>
+<br>
 <a href="Epreuve1Page2.html" class="bouton">SUIVANT</a>
 
 </body>
