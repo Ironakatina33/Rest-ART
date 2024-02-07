@@ -35,6 +35,19 @@ body {
     margin-top: 30px;
 }
 
+.textpopup{
+    color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.soulignement{
+    text-decoration: underline;
+    cursor: pointer; 
+}
+
 .titlepage{
     font-family: 'Arapey', sans-serif;
     text-align: center;
@@ -68,6 +81,8 @@ body {
     margin: 40px auto 0 auto; 
     width: 333px; /* Largeur spécifiée */
     height: 254px; /* Hauteur spécifiée */
+    border: solid;
+    color: rgb(255, 168, 0);
 }
 
 .puzzle2 {
@@ -75,13 +90,33 @@ body {
     margin: 40px auto 0 auto; 
     width: 212px; /* Largeur spécifiée */
     height: 257px; /* Hauteur spécifiée */
+    border-radius: 40% 40% 0 0;
+    border: 2.5px solid rgb(255, 168, 0);
 }
+
+.puzzle3 {
+    display: block;
+    margin: 40px auto 0 auto; 
+    width: 202px;
+    height: 270px;
+    border-radius: 50%;
+    border: 3.5px solid rgb(255, 168, 0);
+}
+
 
 .item1 {
     display: block;
     margin: 40px auto 0 auto; 
     width: 250px; /* Largeur spécifiée */
     height: 250px; /* Hauteur spécifiée */
+    object-fit: cover;
+}
+
+.item2 {
+    display: block;
+    margin: 40px auto 0 auto; 
+    width: 330px; /* Largeur spécifiée */
+    height: 84.57px; /* Hauteur spécifiée */
     object-fit: cover;
 }
 
@@ -122,7 +157,7 @@ button {
     cursor: pointer;
 }
 
-/* Styles spécifiques pour les écrans de petite taille (mobiles) */
+
 @media only screen and (max-width: 600px) {
     .title {
         font-size: 60px;

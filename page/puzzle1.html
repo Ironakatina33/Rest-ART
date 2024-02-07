@@ -20,6 +20,19 @@
             height: 100px;
             margin: 10px;
         }
+
+     
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: aliceblue;
+        }
+        th, td {
+            border: 1px solid rgb(255, 255, 255);
+            padding: 15px;
+            text-align: left;
+        }
+
     </style>
 </head>
 <body class="background-image">
@@ -28,19 +41,45 @@
 
 <div class="text"> Terminer ce premier puzzle pour découvrir l'emplacement du premier outil. En entrant le code, plongez plus profondément dans le récit captivant du renouveau </div>
 
+
+<table id="myTable">
+    <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Coucou</th>
+    </tr>
+</table>
+
+<script>
+    var personnes = [
+        {nom: 'Dupont', email: 'dupont@example.com'},
+        {nom: 'Martin', email: 'martin@example.com'},
+        {nom: 'Bernard', email: 'bernard@example.com'}
+    ];
+
+    var table = document.getElementById('myTable');
+
+    for (var i = 0; i < personnes.length; i++) {
+        var row = table.insertRow(i + 1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = personnes[i].nom;
+        cell2.innerHTML = personnes[i].email;
+    }
+</script>
+
+
 <div class="gallery">
     <img src="../images/image_puzzle.png" alt="Image 1">
     <img src="../images/image_puzzle.png" alt="Image 2">
     <img src="../images/image_puzzle.png" alt="Image 3">
-    <img src="../images/image_puzzle.png" alt="Image 1">
-    <img src="../images/image_puzzle.png" alt="Image 2">
-    <img src="../images/image_puzzle.png" alt="Image 3">
-    <img src="../images/image_puzzle.png" alt="Image 1">
-    <img src="../images/image_puzzle.png" alt="Image 2">
-    <img src="../images/image_puzzle.png" alt="Image 3">
-    <img src="../images/image_puzzle.png" alt="Image 1">
-    <img src="../images/image_puzzle.png" alt="Image 2">
-    <img src="../images/image_puzzle.png" alt="Image 3">
+    <img src="../images/image_puzzle.png" alt="Image 4">
+    <img src="../images/image_puzzle.png" alt="Image 5">
+    <img src="../images/image_puzzle.png" alt="Image 6">
+    <img src="../images/image_puzzle.png" alt="Image 7">
+    <img src="../images/image_puzzle.png" alt="Image 8">
+    <img src="../images/image_puzzle.png" alt="Image 9">
+
     
     <!-- Ajoutez plus d'images ici -->
 </div>

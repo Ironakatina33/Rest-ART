@@ -6,17 +6,35 @@
     <title>Rest'ART</title>
     <link rel="stylesheet" type="text/css" href="../index.css" />
     <link rel="stylesheet" type="text/css" href="../bouton.css" />
+    <link rel="stylesheet" type="text/css" href="../popup.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arapey&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <script src="../code.js"></script>
+    <script src="../popup.js"></script>
+    <style>
+        .colortexthover{
+            color: rgb(255, 168, 0);
+            text-decoration: underline;
+            cursor: pointer; 
+        }
+    </style>
 </head>
 <body class="background-image">
-    <div class="titlepage titlepage2">Épreuve N1</div>
+    <div class="titlepage titlepage2">Tu es talentueux !</div>
     <div class="text text3">Bravo jeune restaurateur, tu as reformé le tableau. Maintenant fonce découvrir l'outil qui s'y cache  </div>
     <img src="../images/puzzle2_fond.png" alt="Rest'Art" class="puzzle2">
-    <div class="text text3">“Les Ondines”, par Ernest Augustin Gendron, réalisé en 1846</div>
+    <div class="text text3">“Les Ondines”, par Ernest Augustin GENDRON, réalisé en 1846. <br><span class="colortexthover" onclick="openPopup()">EN SAVOIR PLUS</span></div>
     <div class="text text3">Maintenant rend toi a l'emplacement de ce tableau et rentre le code trouvé sur l'objet ci-dessous </div>
-    <input type="tel" id="codeInput" placeholder="Entrez le code" maxlength="4" oninput="limitInputLength()" required>
-    <button onclick="checkCode()">Valider</button>
+    <input type="tel" id="codeInput" placeholder="Entrez le code" maxlength="4" oninput="limitInputLength2()" required>
+    <button onclick="checkCode2()">Valider</button>
+
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+    <div id="popup-container" class="popup-container">
+        <img src="/images/Croix.png" alt="Fermer" class="close-image" onclick="closePopup()">
+        <div class="textpopup soulignement">"L'évocation des Ondines" d'Ernest Auguste Gendron"</div>
+        <div class="textpopup">Cette peinture représente les ondines, des créatures mythiques aquatiques, dans un paysage aquatique enchanteur. 
+            Les ondines sont dépeintes avec grâce et fluidité, semblant flotter librement dans les eaux paisibles. Gendron utilise des couleurs douces et des tons pastel pour créer une atmosphère de rêverie et de mystère. La composition met en valeur la beauté naturelle et la tranquillité de l'environnement aquatique, renforçant le sentiment d'émerveillement et de magie associé aux ondines.
+        </div>
+    </div>
 </body>
 </html>

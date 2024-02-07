@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>PuzzleImg example - Images to Puzzle</title>
+<meta name="description" content="PuzzleImg example - Converting two images in webpage to Puzzle" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="puzzleimg.css" />
+<script src="puzzleimg.js"></script>
+<style>
+body{
+background:#fbfbfe;
+text-align:center;
+}
+h1 {
+margin:5px auto;
+font-size:22px;
+}
+h2 {
+margin:0 auto 4px auto;
+font-size:18px;
+}
+#dv1, #dv2 {
+display:inline-block;
+margin:5px 1px;
+border:1px dashed #333;
+text-align:center;
+padding:3px;
+}
+
+</style>
+</head>
+<body>
+<h1>PuzzleImg example - Images to Puzzle</h1>
+
+
+<div id="dv2">
+<h2>Tree</h2>
+<img src="tree.jpg" width="300" height="300" alt="Tree" class="imgs" />
+</div>
+<script>
+//<![CDATA[
+//function called when the puzzle is completed
+var solved = function(){
+  alert('Congratulations');
+}
+
+//converts into puzzle all the images with class "imgs" in Div elements
+//sets 3 columns and 4 rows, and value 0 for the 4th argument to Not display the button that solves the puzzle (1 to show it)
+//calls the solved() function when the puzzle is completed
+imgToPuzzle('div .imgs', 3, 3, 0, solved);
+// ]]>
+</script>
+
+
+<hr>
+</body>
+</html>
