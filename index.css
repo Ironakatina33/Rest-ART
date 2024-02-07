@@ -70,6 +70,21 @@ body {
     height: 254px; /* Hauteur spécifiée */
 }
 
+.puzzle2 {
+    display: block;
+    margin: 40px auto 0 auto; 
+    width: 212px; /* Largeur spécifiée */
+    height: 257px; /* Hauteur spécifiée */
+}
+
+.item1 {
+    display: block;
+    margin: 40px auto 0 auto; 
+    width: 250px; /* Largeur spécifiée */
+    height: 250px; /* Hauteur spécifiée */
+    object-fit: cover;
+}
+
 .bouton {
     display: flex;
     justify-content: center;
