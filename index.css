@@ -5,6 +5,7 @@ body {
 
 .background-image {
     background-image: url(/images/Fond_restart_page.jpg);
+    background-image: url(/images/Fond_restart_page.webp);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
