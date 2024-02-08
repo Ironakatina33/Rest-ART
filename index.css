@@ -4,7 +4,7 @@ body {
 }
 
 .background-image {
-    background-image: url(/images/Fond_restart_page.jpg);
+    background-image: url(/images/Fond_restart_page.png);
     background-image: url(/images/Fond_restart_pagewebp.webp);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -208,5 +208,11 @@ button:hover {
 .outils {
     width: 85px; /* Ajustez la largeur*/
     height: 85px; /* Ajustez la hauteur*/
+    margin-left: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Bordure blanche semi-transparente par défaut */
+    transition: border-color 0.3s ease; /* Transition pour une animation fluide de la couleur de la bordure */
 }
 
+.outils.selected {
+    border-color: rgb(255, 168, 0); /* Couleur de la bordure orange lors de la sélection */
+}
