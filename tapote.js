@@ -15,14 +15,16 @@ PIXI.Assets.add('t1',"../images/Tableau_fin/nettoyage.png");
 PIXI.Assets.add('t2', "../images/Tableau_fin/grattage.png");
 PIXI.Assets.add('t3', "../images/Tableau_fin/vernissage.png");
 PIXI.Assets.add('t4', "../images/Tableau_fin/resultat-final.png");
-PIXI.Assets.load(['t1', 't2']).then(setup);
+PIXI.Assets.load(['t1', 't2', 't3', 't4']).then(setup);
 
 function setup()
 {
     const stageSize = { width: 329, height: 219 };
 
     const background = Object.assign(PIXI.Sprite.from('t1'), stageSize);
-    const imageToReveal = Object.assign(PIXI.Sprite.from('t2'), stageSize);
+    const background2 = Object.assign(PIXI.Sprite.from('t2'), stageSize);
+    const background3 = Object.assign(PIXI.Sprite.from('t3'), stageSize);
+    const imageToReveal = Object.assign(PIXI.Sprite.from('t4'), stageSize);
     const renderTexture = PIXI.RenderTexture.create(stageSize);
     const renderTextureSprite = new PIXI.Sprite(renderTexture);
 
@@ -30,6 +32,8 @@ function setup()
 
     app.stage.addChild(
         background,
+        background2,
+        background3,
         imageToReveal,
         renderTextureSprite,
     );
