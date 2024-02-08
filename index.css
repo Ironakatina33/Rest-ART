@@ -5,7 +5,7 @@ body {
 
 .background-image {
     background-image: url(/images/Fond_restart_page.png);
-    background-image: url(/images/Fond_restart_pagewebp.webp);
+    background-image: url(/images/wbep/Fond_restart_pagewebp.webp);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -72,14 +72,14 @@ body {
 
 .logo {
     display: block;
-    margin: 294px auto 0 auto; 
+    margin: 200px auto 0 auto; 
     width: 197px; /* Largeur spécifiée */
     height: 47px; /* Hauteur spécifiée */
 }
 
 .logo2 {
     display: block;
-    margin: 222px auto 0 auto; 
+    margin: 200px auto 0 auto; 
     width: 197px; /* Largeur spécifiée */
     height: 47px; /* Hauteur spécifiée */
 }

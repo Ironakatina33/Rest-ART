@@ -1,8 +1,7 @@
-import * as PIXI from 'pixi.js';
+const app = new PIXI.Application({ width: 329, height: 219}); /* , resizeTo: window */
+const container = document.querySelector('.container');
+container.appendChild(app.view);
 
-const app = new PIXI.Application({ resizeTo: window });
-
-document.body.appendChild(app.view);
 
 // prepare circle texture, that will be our brush
 const brush = new PIXI.Graphics()
@@ -12,16 +11,13 @@ const brush = new PIXI.Graphics()
 // Create a line that will interpolate the drawn points
 const line = new PIXI.Graphics();
 
-
-
-PIXI.Assets.add('t1', 'https://pixijs.com/assets/bg_grass.jpg');
-PIXI.Assets.add('t2', 'https://pixijs.com/assets/bg_rotate.jpg');
+PIXI.Assets.add('t1',"../images/Tableau_fin/nettoyage.png");
+PIXI.Assets.add('t2', "../images/Tableau_fin/grattage.png");
 PIXI.Assets.load(['t1', 't2']).then(setup);
 
 function setup()
 {
-    const { width, height } = app.screen;
-    const stageSize = { width, height };
+    const stageSize = { width: 329, height: 219 };
 
     const background = Object.assign(PIXI.Sprite.from('t1'), stageSize);
     const imageToReveal = Object.assign(PIXI.Sprite.from('t2'), stageSize);
@@ -32,6 +28,8 @@ function setup()
 
     app.stage.addChild(
         background,
+        background2,
+        background3,
         imageToReveal,
         renderTextureSprite,
     );
