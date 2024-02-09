@@ -144,6 +144,22 @@ body {
     margin-right: 30vw;
 }
 
+.boutonpuzzle {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    border: 2px solid #FFA800;
+    margin-left: 30vw;
+    margin-right: 30vw;
+}
+
 .bouton:active{
     background-color: #FFA800;
 }
