@@ -22,6 +22,8 @@ body {
     position: absolute;
     top: 40px; /* Ajustez la valeur pour déplacer l'image vers le bas */
     left: 45px; /* Ajustez la valeur pour déplacer l'image vers la droite */
+    width: 98px;
+    height: 14px;
 }
 
 
