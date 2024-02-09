@@ -89,15 +89,15 @@
 
  
  <div class="slider">
-   <img class="piece" data-id="1" src="../images/Puzzle_1/PineTools.com_files/row-1-column-1.png" alt="" height="100px" width="100px">
-   <img class="piece" data-id="2" src="../images/Puzzle_1/PineTools.com_files/row-1-column-2.png" alt="" height="100px" width="100px">
-   <img class="piece" data-id="3" src="../images/Puzzle_1/PineTools.com_files/row-1-column-3.png" alt="" height="100px" width="100px">
-   <img class="piece" data-id="4" src="../images/Puzzle_1/PineTools.com_files/row-2-column-1.png" alt="" height="100px" width="100px">
-   <img class="piece" data-id="5" src="../images/Puzzle_1/PineTools.com_files/row-2-column-2.png" alt="" height="100px" width="100px">
-   <img class="piece" data-id="6" src="../images/Puzzle_1/PineTools.com_files/row-2-column-3.png" alt="" height="100px" width="100px">
-   <img class="piece" data-id="7" src="../images/Puzzle_1/PineTools.com_files/row-3-column-1.png" alt="" height="100px" width="100px">
-   <img class="piece" data-id="8" src="../images/Puzzle_1/PineTools.com_files/row-3-column-2.png" alt="" height="100px" width="100px">
-   <img class="piece" data-id="9" src="../images/Puzzle_1/PineTools.com_files/row-3-column-3.png" alt="" height="100px" width="100px">
+  <img class="piece" data-id="2" src="../images/Puzzle_1/PineTools.com_files/row-1-column-2.png" alt="" height="100px" width="100px">
+  <img class="piece" data-id="7" src="../images/Puzzle_1/PineTools.com_files/row-3-column-1.png" alt="" height="100px" width="100px">
+  <img class="piece" data-id="8" src="../images/Puzzle_1/PineTools.com_files/row-3-column-2.png" alt="" height="100px" width="100px">
+  <img class="piece" data-id="5" src="../images/Puzzle_1/PineTools.com_files/row-2-column-2.png" alt="" height="100px" width="100px">
+  <img class="piece" data-id="6" src="../images/Puzzle_1/PineTools.com_files/row-2-column-3.png" alt="" height="100px" width="100px">
+  <img class="piece" data-id="1" src="../images/Puzzle_1/PineTools.com_files/row-1-column-1.png" alt="" height="100px" width="100px">
+  <img class="piece" data-id="9" src="../images/Puzzle_1/PineTools.com_files/row-3-column-3.png" alt="" height="100px" width="100px">
+  <img class="piece" data-id="3" src="../images/Puzzle_1/PineTools.com_files/row-1-column-3.png" alt="" height="100px" width="100px">
+  <img class="piece" data-id="4" src="../images/Puzzle_1/PineTools.com_files/row-2-column-1.png" alt="" height="100px" width="100px">
  </div>
 
 <br>
@@ -105,17 +105,18 @@
 
 <br>
 <br>
-<a href="Epreuve1Page2.html" class="bouton">SUIVANT</a>
+<a href="Epreuve1Page2.html" class="boutonpuzzle">SUIVANT</a>
 
 
 <script>
     var cells = document.querySelectorAll('.cell');
     var pieces = document.querySelectorAll('.piece');
+    var button = document.querySelector('.boutonpuzzle');
 
     var selectedKitty;
     
   
-    console.log(pieces);
+    console.log(button);
     pieces.forEach(function(kitty) {
       kitty.addEventListener('click', function() {
         selectKitty(kitty);
@@ -159,6 +160,8 @@
       
       cells.forEach(function(cell) {
         if (cell.getAttribute("data-correct") == "false") {
+    
+  
           isCorrect = false;
 
 
@@ -166,7 +169,9 @@
       });
       
       if (isCorrect) {
+        button.style.display= "flex";
         window.alert('gagné')
+
 
       }
     }

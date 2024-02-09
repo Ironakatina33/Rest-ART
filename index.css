@@ -145,7 +145,8 @@ body {
 }
 
 .boutonpuzzle {
-    display: flex;
+    
+    display: none;
     justify-content: center;
     align-items: end;
     cursor: pointer;
