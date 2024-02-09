@@ -169,32 +169,32 @@
         return;
       }
 
-      if(cell.getAttribute('data-id-inserted') && selectedKitty){
-        if (cell.getAttribute('data-correct') === true) return;        
-        console.log("data-correct", cell.getAttribute("data-correct"));
-        selectedKitty = document.querySelector(`img[data-id="${cell.getAttribute("data-id-inserted")}"]`);
-        selectedKitty.style.display = "inline";
-        cell.style.backgroundImage = "none";
+      if(cell.getAttribute('data-id-inserted')){     
+          console.log("data-correct", cell.getAttribute("data-correct"));
+          selectedKitty = document.querySelector(`img[data-id="${cell.getAttribute("data-id-inserted")}"]`);
+          selectedKitty.style.display = "inline";
+          cell.style.backgroundImage = "none";
+          
+          cell.removeAttribute('data-id-inserted');
+          unselectedkitty();
+          return;
+        }
         
-        cell.removeAttribute('data-id-inserted');
+        cell.style.backgroundImage = "url(" + selectedKitty.src + ")";
+        cell.setAttribute("data-id-inserted", selectedKitty.getAttribute("data-id"))
+      
+        selectedKitty.style.display = "none"
+        if (cell.getAttribute("data-id") === selectedKitty.getAttribute("data-id")) {
+          cell.setAttribute("data-correct", true);
+        } else {
+         
+          cell.setAttribute("data-correct", false);
+        }
+  
         unselectedkitty();
-        return;
+        
+        checkAllCells();
       }
-      
-      cell.style.backgroundImage = "url(" + selectedKitty.src + ")";
-      cell.setAttribute("data-id-inserted", selectedKitty.getAttribute("data-id"))
-    
-      selectedKitty.style.display = "none"
-      if (cell.getAttribute("data-id") === selectedKitty.getAttribute("data-id")) {
-        cell.setAttribute("data-correct", true);
-      } else {
-        cell.setAttribute("data-correct", false);
-      }
-
-      
-      
-      checkAllCells();
-    }
     
     function checkAllCells() {
       var isCorrect = true;

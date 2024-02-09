@@ -292,8 +292,7 @@
           return;
         }
   
-        if(cell.getAttribute('data-id-inserted') && selectedKitty){
-          if (cell.getAttribute('data-correct') === true) return;        
+        if(cell.getAttribute('data-id-inserted')){     
           console.log("data-correct", cell.getAttribute("data-correct"));
           selectedKitty = document.querySelector(`img[data-id="${cell.getAttribute("data-id-inserted")}"]`);
           selectedKitty.style.display = "inline";
@@ -311,10 +310,11 @@
         if (cell.getAttribute("data-id") === selectedKitty.getAttribute("data-id")) {
           cell.setAttribute("data-correct", true);
         } else {
+         
           cell.setAttribute("data-correct", false);
         }
   
-        
+        unselectedkitty();
         
         checkAllCells();
       }
