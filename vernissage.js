@@ -59,7 +59,7 @@ function setup()
   
         const percentageRemaining = (remainingPixels / totalPixels) * 100;
         if (percentageRemaining >= 90) {
-            window.location = '/page/Grattage.html';
+            window.location = '/page/fin.html';
         }
   
         console.log(percentageRemaining);
