@@ -1,4 +1,7 @@
-const app = new PIXI.Application({ width: 329, height: 219}); /* , resizeTo: window */
+const width = 329;
+const height = 219;
+const app = new PIXI.Application({ width, height}); 
+const totalPixels = width * height
 const container = document.querySelector('.container');
 container.appendChild(app.view);
 
@@ -37,11 +40,31 @@ function setup()
         .on('pointerdown', pointerDown)
         .on('pointerup', pointerUp)
         .on('pointerupoutside', pointerUp)
-        .on('pointermove', pointerMove);
+        .on('pointermove', (e) => {
+            percentage()
+            pointerMove(e)
+        });
+
 
     let dragging = false;
     let lastDrawnPoint = null;
 
+    function percentage(getPercentageAt) {
+        const pixels = app.renderer.extract.pixels(renderTexture);
+  
+        remainingPixels = pixels.reduce(
+          (count , value , index) =>
+            index % 4 === 3 && value !== 0 ? count + 1 : count,
+          0
+        );
+  
+        const percentageRemaining = (remainingPixels / totalPixels) * 100;
+        if (percentageRemaining >= 90) {
+            window.location = '/page/Grattage.html';
+        }
+  
+        console.log(percentageRemaining);
+      }
     function pointerMove({ global: { x, y } })
     {
         if (dragging)
