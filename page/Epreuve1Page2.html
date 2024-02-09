@@ -1,43 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rest'ART</title>
     <link rel="stylesheet" type="text/css" href="../index.css" />
     <link rel="stylesheet" type="text/css" href="../bouton.css" />
     <link rel="stylesheet" type="text/css" href="../popup.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arapey&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Arapey&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+    />
     <script src="../code.js"></script>
     <script src="../popup.js"></script>
     <style>
-        .colortexthover{
-            color: rgb(255, 168, 0);
-            text-decoration: underline;
-            cursor: pointer; 
-        }
-        .colortext{
-            color: rgb(255, 168, 0);
-        }
+      .colortexthover {
+        color: rgb(255, 168, 0);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .colortext {
+        color: rgb(255, 168, 0);
+      }
     </style>
-</head>
-<body class="background-image">
-    <img src="/images/Progress Bar/Progress Bar/InProgress_lvl1.webp" alt="Rest'Art" class="img-progres">
+  </head>
+  <body class="background-image">
+    <img
+      src="/images/Progress Bar/Progress Bar/InProgress_lvl1.webp"
+      alt="Rest'Art"
+      class="img-progres"
+    />
     <div class="titlepage titlepage2">Dans le mille !</div>
-    <div class="text text3">Bravo jeune restaurateur, tu as reformé le tableau. Maintenant fonce découvrir l'outil qui s'y cache  </div>
-    <img src="/images/puzzle1_fond.jpg" alt="Rest'Art" class="puzzle1">
-    <div class="text text3">“Bataille du 17 juin 1815 (Waterloo) - 17 juin 1815, sept heures du soir”, par John-Lewis BROWN, réalisé en 1869. <span class="colortexthover" onclick="openPopup()">EN SAVOIR PLUS</span></div>
-    <div class="text text3">Maintenant, rends-toi à <span class="colortext">l'emplacement</span> de ce tableau et rentre le <span class="colortext">code trouvé sur l'objet</span>. </div>
-    <input type="tel" id="codeInput" placeholder="Entrez le code" maxlength="4" oninput="limitInputLength()" required>
+    <div class="text text3">
+      <span class="colortext">Bravo</span> jeune restaurateur, tu as
+      <span class="colortext">reformé</span> le tableau. Regarde la
+      <span class="colortext">technicité</span> de cette peinture !
+    </div>
+    <img src="/images/puzzle1_fond.jpg" alt="Rest'Art" class="puzzle1" />
+    <div class="text text3">
+      “Bataille du 17 juin 1815 (Waterloo) - 17 juin 1815, sept heures du soir”,
+      par John-Lewis BROWN, réalisé en 1869.
+      <span class="colortexthover" onclick="openPopup()">EN SAVOIR PLUS</span>
+    </div>
+    <div class="text text3">
+      Maintenant, rends-toi à <span class="colortext">l'emplacement</span> de ce
+      tableau et rentre le
+      <span class="colortext">code trouvé sur l'objet</span>.
+    </div>
+    <input
+      type="tel"
+      id="codeInput"
+      placeholder="Entrez le code"
+      maxlength="4"
+      oninput="limitInputLength()"
+      required
+    />
     <button onclick="checkCode()">Valider</button>
 
     <div id="overlay" class="overlay" onclick="closePopup()"></div>
     <div id="popup-container" class="popup-container">
-        <img src="/images/Croix.png" alt="Fermer" class="close-image" onclick="closePopup()">
-        <div class="textpopup soulignement">"Bataille du 17 Juin 1815 (Waterloo)" de John Lewis Brown</div>
-        <div class="textpopup">Ce tableau capture avec précision l'intensité de la célèbre bataille de Waterloo. Les soldats sont représentés dans un tumulte de combat, avec des chevaux galopant et des canons tonnant. Brown utilise le clair-obscur pour ajouter du dynamisme à la scène, tandis que les détails réalistes des uniformes et des armes créent une atmosphère authentique. La peinture incarne le réalisme académique tout en animant la scène avec une énergie dramatique.
-        </div>
+      <img
+        src="/images/Croix.png"
+        alt="Fermer"
+        class="close-image"
+        onclick="closePopup()"
+      />
+      <div class="textpopup soulignement">
+        "Bataille du 17 Juin 1815 (Waterloo)" de John Lewis Brown
+      </div>
+      <div class="textpopup">
+        Ce tableau capture avec précision l'intensité de la célèbre bataille de
+        Waterloo. Les soldats sont représentés dans un tumulte de combat, avec
+        des chevaux galopant et des canons tonnant. Brown utilise le
+        clair-obscur pour ajouter du dynamisme à la scène, tandis que les
+        détails réalistes des uniformes et des armes créent une atmosphère
+        authentique. La peinture incarne le réalisme académique tout en animant
+        la scène avec une énergie dramatique.
+      </div>
     </div>
-</body>
+  </body>
 </html>

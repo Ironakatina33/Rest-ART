@@ -37,6 +37,10 @@ body {
     margin-right: 50px;
 }
 
+.colortext{
+    color: rgb(255, 168, 0);
+}
+
 .text2{
     margin-top: 90px;
 }
@@ -223,6 +227,20 @@ button:hover {
     left: 40px;
 }
 
+.container2 {
+    position: relative;
+    width: 329px; /* Ajustez la largeur*/
+    height: 215px; /* Ajustez la hauteur*/
+    left: 95px;
+}
+
+.container3 {
+    position: relative;
+    width: 329px; /* Ajustez la largeur*/
+    height: 215px; /* Ajustez la hauteur*/
+    left: 150px;
+}
+
 .nettoyage {
     position : absolute;
     width: 329px; /* Ajustez la largeur*/
@@ -238,5 +256,9 @@ button:hover {
 }
 
 .outils.selected {
+    border-color: rgb(255, 168, 0); /* Couleur de la bordure orange lors de la sélection */
+}
+
+.selected {
     border-color: rgb(255, 168, 0); /* Couleur de la bordure orange lors de la sélection */
 }
