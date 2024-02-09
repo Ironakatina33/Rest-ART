@@ -80,6 +80,13 @@ body {
     margin: 97px auto 0 auto;
 }
 
+.titlepage4{
+    font-family: 'Arapey', sans-serif;
+    text-align: right;
+    font-size: 20px;
+    margin-top: 8.25vw;
+}
+
 
 .logo {
     display: block;
@@ -93,6 +100,15 @@ body {
     margin: 200px auto 0 auto; 
     width: 197px; /* Largeur spécifiée */
     height: 47px; /* Hauteur spécifiée */
+}
+
+.puzzle1 {
+    display: block;
+    margin: 40px auto 0 auto; 
+    width: 333px; /* Largeur spécifiée */
+    height: 254px; /* Hauteur spécifiée */
+    border: solid;
+    color: rgb(255, 168, 0);
 }
 
 .puzzle1 {
@@ -122,6 +138,34 @@ body {
     border: 3.5px solid rgb(255, 168, 0);
 }
 
+.img-popup {
+    display: block;
+    margin: 40px auto 0 auto; 
+    width: 282px; /* Largeur spécifiée */
+    height: 216px; /* Hauteur spécifiée */
+    border: solid;
+    color: rgb(255, 168, 0);
+}
+
+.img-popup2 {
+    display: block;
+    margin: 40px auto 0 auto; 
+    width: 212px; /* Largeur spécifiée */
+    height: 254px; /* Hauteur spécifiée */
+    border-radius: 40% 40% 0 0;
+    border: 2.5px solid rgb(255, 168, 0);
+    color: rgb(255, 168, 0);
+}
+
+.img-popup3 {
+    display: block;
+    margin: 40px auto 0 auto; 
+    width: 206px; /* Largeur spécifiée */
+    height: 270px; /* Hauteur spécifiée */
+    border-radius: 50%;
+    border: 3.5px solid rgb(255, 168, 0);
+    color: rgb(255, 168, 0);
+}
 
 .item1 {
     display: block;
@@ -153,6 +197,11 @@ body {
     border: 2px solid #FFA800;
     margin-left: 30vw;
     margin-right: 30vw;
+}
+
+.boutono {
+    margin-left: 15vw;
+    margin-right: 15vw;
 }
 
 .boutonpuzzle {

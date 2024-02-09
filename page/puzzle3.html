@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rest'ART</title>
     <link rel="stylesheet" type="text/css" href="../index.css" />
+    <link rel="stylesheet" type="text/css" href="../popup.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arapey&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
-    
+    <script src="../code.js"></script>
+    <script src="../popup.js"></script>
 
     <style>
         .gallery {
@@ -54,10 +56,24 @@
   overflow: auto;
   white-space: nowrap;
 }
+.colortexthover {
+        color: rgb(255, 168, 0);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .colortext {
+        color: rgb(255, 168, 0);
+      }
     </style>
 </head>
 <body class="background-image">
-
+  <div class="text">
+    <img
+    src="/images/Progress Bar/Progress Bar/InProgress_lvl3.webp"
+    alt="Rest'Art"
+    class="img-progres"/>
+    <div class='titlepage4'><span class="colortexthover" onclick="openPopup()">Indice</span></div>
+  </div>
 <div class="titlepage3" style="font-size: 50px;">Epreuve N°3</div>
 
 <div class="text"> Terminer le dernier puzzle pour <span class="colortext">découvrir</span> l'emplacement du <span class="colortext">dernier outil</span>.</div>
@@ -110,74 +126,113 @@
 
 
 <script>
-    var cells = document.querySelectorAll('.cell');
-    var pieces = document.querySelectorAll('.piece');
-    var button = document.querySelector('.boutonpuzzle');
+  var cells = document.querySelectorAll('.cell');
+  var pieces = [...document.querySelectorAll('.piece')];
+  var button = document.querySelector('.boutonpuzzle');
 
-    var selectedKitty;
-    
+  var selectedKitty;
   
-    console.log(button);
-    pieces.forEach(function(kitty) {
-      kitty.addEventListener('click', function() {
-        selectKitty(kitty);
-        console.log('ATAz');
-      })
-    });
-    
-    function selectKitty(kitty) {
-      if (selectedKitty) {
-        selectedKitty.style.border = "none";
-      }
-    
-      selectedKitty = kitty;
-      selectedKitty.style.border = "3px solid #FFA800";
+
+
+  console.log("kezf" , pieces);
+  pieces.forEach(function(kitty) {
+    kitty.addEventListener('click', function() {
+      selectKitty(kitty);
+      console.log('ATAz');
+    })
+  });
+  
+  function selectKitty(kitty) {
+    if (selectedKitty) {
+      selectedKitty.style.border = "none";
     }
+  
+    selectedKitty = kitty;
+    selectedKitty.style.border = "3px solid #FFA800";
+    
+  }
+  function unselectedkitty(){
+      selectedKitty.style.border = "none";
+      selectedKitty = null;
+  }
+
+  cells.forEach(function(cell) {
+    cell.addEventListener('click', function() {
+      selectCell(cell);
+    })
+  });
+  
+  function selectCell(cell) {
+    console.log('data correct' , cell.getAttribute("data-correct"));
+    console.log('selectedkitty' , selectedKitty);
+    if (cell.getAttribute("data-correct") === "true") {
+      return;
+    }
+
+    if(cell.getAttribute('data-id-inserted') && selectedKitty){
+      if (cell.getAttribute('data-correct') === true) return;        
+      console.log("data-correct", cell.getAttribute("data-correct"));
+      selectedKitty = document.querySelector(`img[data-id="${cell.getAttribute("data-id-inserted")}"]`);
+      selectedKitty.style.display = "inline";
+      cell.style.backgroundImage = "none";
+      
+      cell.removeAttribute('data-id-inserted');
+      unselectedkitty();
+      return;
+    }
+    
+    cell.style.backgroundImage = "url(" + selectedKitty.src + ")";
+    cell.setAttribute("data-id-inserted", selectedKitty.getAttribute("data-id"))
+  
+    selectedKitty.style.display = "none"
+    if (cell.getAttribute("data-id") === selectedKitty.getAttribute("data-id")) {
+      cell.setAttribute("data-correct", true);
+    } else {
+      cell.setAttribute("data-correct", false);
+    }
+
+    
+    
+    checkAllCells();
+  }
+  
+  function checkAllCells() {
+    var isCorrect = true;
     
     cells.forEach(function(cell) {
-      cell.addEventListener('click', function() {
-        selectCell(cell);
-      })
+      if (cell.getAttribute("data-correct") == "false") {
+  
+
+        isCorrect = false;
+
+
+      }
     });
     
-    function selectCell(cell) {
-      if (!selectedKitty) {
-        return;
-      }
-      
-      cell.style.backgroundImage = "url(" + selectedKitty.src + ")";
-      
-      if (cell.getAttribute("data-id") === selectedKitty.getAttribute("data-id")) {
-        cell.setAttribute("data-correct", true);
-      } else {
-        cell.setAttribute("data-correct", false);
-      }
-      
-      checkAllCells();
+    if (isCorrect) {
+      button.style.display= "flex";
+      window.alert('gagné')
+
+
     }
-    
-    function checkAllCells() {
-      var isCorrect = true;
-      
-      cells.forEach(function(cell) {
-        if (cell.getAttribute("data-correct") == "false") {
-    
+  }
   
-          isCorrect = false;
-
-
-        }
-      });
-      
-      if (isCorrect) {
-        button.style.display= "flex";
-        window.alert('gagné')
-
-
-      }
-    }
-    
 </script>
-
+<div id="overlay" class="overlay" onclick="closePopup()"></div>
+<div id="popup-container" class="popup-container">
+  <img
+    src="/images/Croix.png"
+    alt="Fermer"
+    class="close-image"
+    onclick="closePopup()"
+  />
+  <div>
+    <img src="../images/puzzle3_fond.png" alt="Rest'Art" class="img-popup3" />
+  </div>
+  <div class="textpopup">
+    Voici une prévisualisation du tableau
+    qui pourrait t'aider. <br>
+</div>
+</div>
 </body>
 </html>

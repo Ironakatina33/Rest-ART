@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rest'ART</title>
     <link rel="stylesheet" type="text/css" href="../index.css" />
+    <link rel="stylesheet" type="text/css" href="../popup.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Arapey&display=swap"
@@ -13,6 +14,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
     />
+    <script src="../code.js"></script>
     <script src="../popup.js"></script>
 
     <style>
@@ -73,17 +75,12 @@
     </style>
   </head>
   <body class="background-image">
-    <div class="text text3">
-      <span class="colortexthover" onclick="openPopup()">Indice</span>
-    </div>
-
-    <div id="overlay" class="overlay" onclick="closePopup()"></div>
-    <div id="popup-container" class="popup-container">
-        <img src="/images/Croix.png" alt="Fermer" class="close-image" onclick="closePopup()">
-        <div class="textpopup soulignement">"L'évocation des Ondines" d'Ernest Auguste Gendron"</div>
-        <div class="textpopup">Cette peinture représente les ondines, des créatures mythiques aquatiques, dans un paysage aquatique enchanteur. 
-            Les ondines sont dépeintes avec grâce et fluidité, semblant flotter librement dans les eaux paisibles. Gendron utilise des couleurs douces et des tons pastel pour créer une atmosphère de rêverie et de mystère. La composition met en valeur la beauté naturelle et la tranquillité de l'environnement aquatique, renforçant le sentiment d'émerveillement et de magie associé aux ondines.
-        </div>
+    <div class="text">
+      <img
+      src="/images/Progress Bar/Progress Bar/InProgress_lvl1.webp"
+      alt="Rest'Art"
+      class="img-progres"/>
+      <div class='titlepage4'><span class="colortexthover" onclick="openPopup()">Indice</span></div>
     </div>
 
     <div class="titlepage3" style="font-size: 50px">Epreuve N°1</div>
@@ -249,70 +246,116 @@
     <br />
     <br />
     <a href="Epreuve1Page2.html" class="boutonpuzzle">ALLER À L'ÉPREUVE N2</a>
-    <a href="Epreuve1Page2.html" class="bouton">ALLER À L'ÉPREUVE N2</a>
+    <a href="Epreuve1Page2.html" class="bouton boutono">ALLER À L'ÉPREUVE N2</a>
 
     <script>
-      var cells = document.querySelectorAll(".cell");
-      var pieces = document.querySelectorAll(".piece");
-      var button = document.querySelector(".boutonpuzzle");
-
+      var cells = document.querySelectorAll('.cell');
+      var pieces = [...document.querySelectorAll('.piece')];
+      var button = document.querySelector('.boutonpuzzle');
+  
       var selectedKitty;
-
-      console.log(button);
-      pieces.forEach(function (kitty) {
-        kitty.addEventListener("click", function () {
+      
+    
+  
+      console.log("kezf" , pieces);
+      pieces.forEach(function(kitty) {
+        kitty.addEventListener('click', function() {
           selectKitty(kitty);
-          console.log("ATAz");
-        });
+          console.log('ATAz');
+        })
       });
-
+      
       function selectKitty(kitty) {
         if (selectedKitty) {
           selectedKitty.style.border = "none";
         }
-
+      
         selectedKitty = kitty;
         selectedKitty.style.border = "3px solid #FFA800";
+        
       }
-
-      cells.forEach(function (cell) {
-        cell.addEventListener("click", function () {
+      function unselectedkitty(){
+          selectedKitty.style.border = "none";
+          selectedKitty = null;
+      }
+  
+      cells.forEach(function(cell) {
+        cell.addEventListener('click', function() {
           selectCell(cell);
-        });
+        })
       });
-
+      
       function selectCell(cell) {
-        if (!selectedKitty) {
+        console.log('data correct' , cell.getAttribute("data-correct"));
+        console.log('selectedkitty' , selectedKitty);
+        if (cell.getAttribute("data-correct") === "true") {
           return;
         }
-
+  
+        if(cell.getAttribute('data-id-inserted') && selectedKitty){
+          if (cell.getAttribute('data-correct') === true) return;        
+          console.log("data-correct", cell.getAttribute("data-correct"));
+          selectedKitty = document.querySelector(`img[data-id="${cell.getAttribute("data-id-inserted")}"]`);
+          selectedKitty.style.display = "inline";
+          cell.style.backgroundImage = "none";
+          
+          cell.removeAttribute('data-id-inserted');
+          unselectedkitty();
+          return;
+        }
+        
         cell.style.backgroundImage = "url(" + selectedKitty.src + ")";
-
-        if (
-          cell.getAttribute("data-id") === selectedKitty.getAttribute("data-id")
-        ) {
+        cell.setAttribute("data-id-inserted", selectedKitty.getAttribute("data-id"))
+      
+        selectedKitty.style.display = "none"
+        if (cell.getAttribute("data-id") === selectedKitty.getAttribute("data-id")) {
           cell.setAttribute("data-correct", true);
         } else {
           cell.setAttribute("data-correct", false);
         }
-
+  
+        
+        
         checkAllCells();
       }
-
+      
       function checkAllCells() {
         var isCorrect = true;
-
-        cells.forEach(function (cell) {
+        
+        cells.forEach(function(cell) {
           if (cell.getAttribute("data-correct") == "false") {
+      
+    
             isCorrect = false;
+  
+  
           }
         });
-
+        
         if (isCorrect) {
-          button.style.display = "flex";
-          window.alert("gagné");
+          button.style.display= "flex";
+          window.alert('gagné')
+  
+  
         }
       }
-    </script>
+      
+  </script>
+      <div id="overlay" class="overlay" onclick="closePopup()"></div>
+        <div id="popup-container" class="popup-container">
+          <img
+            src="/images/Croix.png"
+            alt="Fermer"
+            class="close-image"
+            onclick="closePopup()"
+          />
+          <div>
+            <img src="/images/puzzle1_fond.jpg" alt="Rest'Art" class="img-popup" />
+          </div>
+          <div class="textpopup">
+            Voici une prévisualisation du tableau
+            qui pourrait t'aider.
+        </div>
+      </div>
   </body>
 </html>
