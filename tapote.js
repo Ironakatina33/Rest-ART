@@ -14,7 +14,7 @@ const brush = new PIXI.Graphics()
 // Create a line that will interpolate the drawn points
 const line = new PIXI.Graphics();
 
-PIXI.Assets.add('t1', '../images/wbep/nettoyage-cadreweb.webp');
+PIXI.Assets.add('t1', '../Rest-ART/images/wbep/nettoyage-cadreweb.webp');
 PIXI.Assets.add('t2', '../images/wbep/grattage-cadreweb.webp');
 PIXI.Assets.load(['t1', 't2']).then(setup);
 
