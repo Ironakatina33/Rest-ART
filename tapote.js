@@ -15,7 +15,7 @@ const brush = new PIXI.Graphics()
 const line = new PIXI.Graphics();
 
 PIXI.Assets.add('t1', '../Rest-ART/images/wbep/nettoyage-cadreweb.webp');
-PIXI.Assets.add('t2', '/images/wbep/grattage-cadreweb.webp');
+PIXI.Assets.add('t2', '../Rest-ART/images/wbep/grattage-cadreweb.webp');
 PIXI.Assets.load(['t1', 't2']).then(setup);
 
 function setup()
