@@ -15,7 +15,7 @@ const brush = new PIXI.Graphics()
 const line = new PIXI.Graphics();
 
 PIXI.Assets.add('t1', '../tableaufin/nettoyage-cadre.png');
-PIXI.Assets.add('t2', '../tableaufin/vernissage-cadre.png');
+PIXI.Assets.add('t2', '/tableaufin/grattage-cadre.png');
 PIXI.Assets.load(['t1', 't2']).then(setup);
 
 function setup()
