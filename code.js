@@ -9,7 +9,7 @@ function checkCode() {
     var enteredCode = document.getElementById('codeInput').value;
 
     // Ajoutez votre logique pour vérifier le code ici
-    if (enteredCode === '1234') {
+    if (enteredCode === '1706') {
         // Redirigez l'utilisateur vers la page suivante
         window.location.href = '../page/Epreuve1Page3.html';
     } else {
@@ -28,7 +28,7 @@ function checkCode2() {
     var enteredCode = document.getElementById('codeInput').value;
 
     // Ajoutez votre logique pour vérifier le code ici
-    if (enteredCode === '5678') {
+    if (enteredCode === '8118') {
         // Redirigez l'utilisateur vers la page suivante
         window.location.href = '../page/Epreuve2Page3.html';
     } else {
@@ -47,7 +47,7 @@ function checkCode3() {
     var enteredCode = document.getElementById('codeInput').value;
 
     // Ajoutez votre logique pour vérifier le code ici
-    if (enteredCode === '6464') {
+    if (enteredCode === '1497') {
         // Redirigez l'utilisateur vers la page suivante
         window.location.href = '../page/Epreuve3Page3.html';
     } else {
